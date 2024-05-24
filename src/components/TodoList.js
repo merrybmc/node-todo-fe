@@ -22,13 +22,13 @@ function TodoList() {
 
   useEffect(() => {
     const cachedData = getLocalStorage('todoList');
-    setCachedData(cachedData, setTodoList);
+    cachedData && setCachedData(cachedData, setTodoList);
 
     const getData = async () => {
       const res = await getAsyncApi('/tasks');
       const { data } = res.data;
 
-      validSetCacheData(data, cachedData, 'todoList', setTodoList);
+      cachedData ? validSetCacheData(data, cachedData, 'todoList', setTodoList) : setTodoList(data);
     };
 
     getData();
