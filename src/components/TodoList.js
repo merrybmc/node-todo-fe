@@ -28,7 +28,7 @@ function TodoList() {
       const res = await getAsyncApi('/tasks');
       const { data } = res.data;
 
-      cachedData ? validSetCacheData(data, cachedData, 'todoList', setTodoList) : setTodoList(data);
+      validSetCacheData(data, cachedData, 'todoList', setTodoList);
     };
 
     getData();
