@@ -15,7 +15,10 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const res = await api.post('/user/login', { email, password });
-      if (res.status === 200) navigate('/');
+      if (res.status === 200) {
+        navigate('/');
+        window.location.reload();
+      }
     } catch (e) {
       setError(e.error);
     }

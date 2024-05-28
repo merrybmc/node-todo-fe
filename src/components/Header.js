@@ -10,7 +10,7 @@ export default function Header({ children }) {
 
   const getUserInfo = async () => {
     const info = await api.get('/user/me');
-    if (info.data) {
+    if (info.data.data) {
       setLoginState(true);
       setUserInfo(info.data.data);
     } else {
@@ -21,12 +21,14 @@ export default function Header({ children }) {
 
   const onLogout = async () => {
     const logout = await api.get('/user/logout');
-    if (logout.status === 200) navigate('/');
+    if (logout.status === 200) {
+      getUserInfo();
+    }
   };
 
   useEffect(() => {
     getUserInfo();
-  }, [window.location]);
+  }, []);
 
   return (
     <div className='headerWrapper'>
@@ -35,7 +37,7 @@ export default function Header({ children }) {
           홈
         </button>
 
-        {userInfo ? (
+        {loginState ? (
           <div className='headerloginbox'>
             <div>{userInfo && userInfo.name}님 반갑습니다.</div>
             <button className='headerbtn' onClick={onLogout}>
