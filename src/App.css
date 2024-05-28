@@ -1,5 +1,5 @@
 body {
-  color: midnightblue !important ;
+  color: lightblue !important ;
   background-color: aliceblue !important;
 }
 
@@ -24,6 +24,10 @@ body {
 }
 .input-box:focus {
   outline: none;
+}
+button {
+  background-color: lightblue;
+  color: white;
 }
 .button-add {
   height: 40px;
@@ -51,4 +55,66 @@ body {
 .item-complete {
   background-color: gainsboro;
   color: white;
+}
+
+.login-box {
+  border: 1px solid lightblue;
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+}
+.login-box label {
+  font-weight: 700;
+}
+
+.display-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 350px;
+}
+
+.button-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-primary {
+  background-color: lightblue;
+  color: #ffffff;
+  border: none;
+}
+
+.red-error {
+  color: red;
+}
+
+.header {
+  max-width: 1300px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  color: white;
+  font-size: 18px;
+  background-color: blueviolet;
+  padding: 0 40px;
+}
+
+.headerloginbox {
+  display: flex;
+  gap: 40px;
+}
+
+.headerbtn {
+  background-color: transparent;
+  border: none;
+}
+
+.headerbtn:hover {
+  transform: scale(102%);
+  font-weight: 600;
 }
